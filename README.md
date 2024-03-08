@@ -117,3 +117,50 @@ println(resultado)
 
 
 ///
+
+
+
+import kotlin.math.pow
+
+fun main() {
+    println("area do retangulo: ${calcularAreaRetangulo(2.0, 7.0)}")
+    println("area do triangulo: ${calcularAreaTriangulo(3.0, 8.0)}")
+    println("area do triangulo equilatero: ${calcularAreaTrianguloEquilatero(5.0)}")
+    println("area do triangulo isosceles: ${calcularAreaTrianguloIsosceles(4.0, 6.0)}")
+    println("area do triangulo escaleno: ${calcularAreaTrianguloEscaleno(3.0, 4.0, 5.0)}")
+    println("area da circunferencia: ${calcularAreaCircunferencia(3.0)}")
+    println("area do losango: ${calcularAreaLosango(4.0, 6.0)}")
+    println("area do trapezio: ${calcularAreaTrapezio(4.0, 6.0, 8.0)}")
+}
+
+fun calcularAreaRetangulo(base: Double, altura: Double): Double {
+    return base * altura
+}
+
+fun calcularAreaTriangulo(base: Double, altura: Double): Double {
+    return (base * altura) / 2
+}
+
+fun calcularAreaTrianguloEquilatero(lado: Double): Double {
+    return (lado.pow(2) * Math.sqrt(3.0)) / 4
+}
+
+fun calcularAreaTrianguloIsosceles(base: Double, altura: Double): Double {
+    return (base * altura) / 2
+}
+
+fun calcularAreaTrianguloEscaleno(a: Double, b: Double, c: Double): Double {
+    val p = (a + b + c) / 2
+    return Math.sqrt(p * (p - a) * (p - b) * (p - c))
+}
+
+fun calcularAreaCircunferencia(raio: Double): Double {
+    return Math.PI * raio.pow(2)
+}
+
+fun calcularAreaLosango(diagonalMaior: Double, diagonalMenor: Double): Double {
+    return (diagonalMaior * diagonalMenor) / 2
+}
+
+fun calcularAreaTrapezio(baseMaior: Double, baseMenor: Double, altura: Double): Double {
+    return ((baseMaior + baseMenor) * altura) / 2
